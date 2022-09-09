@@ -1,0 +1,82 @@
+{
+    "title": "",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "start": "cross-env NODE_TYPE=dev emp dev --hot --env dev",
+        "dev": "cross-env NODE_TYPE=develop emp build --env dev",
+        "fat": "cross-env NODE_TYPE=fat emp build --env fat",
+        "prod": "cross-env NODE_TYPE=prod emp build --env prod",
+        "build:ts": "emp build -t",
+        "build:lab": "emp build --env lab"
+    },
+    "dependencies": {
+        "antd": "^4.20.1",
+        "lodash": "^4.17.21",
+        "mobx": "^6.3.5",
+        "mobx-react-lite": "^3.2.1",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "react-router-dom": "^5.3.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^17.0.3",
+        "@commitlint/config-conventional": "^17.0.3",
+        "@efox/emp-cli": "^1.10.1",
+        "@efox/emp-esbuild": "^1.0.2",
+        "@efox/emp-tsconfig": "^1.0.0",
+        "@efox/eslint-config-react-prittier-ts": "^1.1.0",
+        "@types/lodash": "^4.14.182",
+        "@types/react": "^18.0.0",
+        "@types/react-dom": "^18.0.0",
+        "@types/react-router-dom": "^5.3.0",
+        "@typescript-eslint/eslint-plugin": "^4.32.0",
+        "@typescript-eslint/parser": "^4.32.0",
+        "axios": "^0.24.0",
+        "cross-env": "^7.0.3",
+        "cz-customizable": "^6.9.0",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-react": "^7.26.0",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "husky": "^4.0.3",
+        "lint-staged": "^7.2.2",
+        "mini-css-extract-plugin": "2.4.5",
+        "prettier": "^2.4.1",
+        "style-resources-loader": "^1.4.1",
+        "typescript-plugin-css-modules": "^3.4.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+        }
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "prettier --config .prettierrc --write",
+            "eslint  --config .eslintrc.js --fix",
+            "git add"
+        ],
+        "*.{css,less}": [
+            "prettier --config .prettierrc --write",
+            "git add"
+        ],
+        "*.{md,json}": [
+            "prettier --config .prettierrc --write",
+            "git add"
+        ]
+    },
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-customizable"
+        },
+        "cz-customizable": {
+            "config": "./.cz-config.js"
+        }
+    }
+}
