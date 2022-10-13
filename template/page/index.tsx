@@ -5,11 +5,11 @@ import styles  from './index.module.less';
 interface IProps {
 
 }
-const Index = (props: IProps) => {
+const `{ComName}` = (props: IProps) => {
     return(
         <div className={styles.container}>
             test page
         </div>
     )
 }
-export default localeCom(Index);
+export default localeCom(`{ComName}`);

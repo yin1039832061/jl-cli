@@ -5,11 +5,11 @@ import './index.module.less';
 interface IProps{
 
 }
-const Index=(props:IProps)=>{
+const `{ComName}` = (props:IProps)=>{
     return(
         <div >
 
         </div>
     )
 }
-export default Index;
+export default `{ComName}`;
