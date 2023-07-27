@@ -8,7 +8,7 @@ interface IProps {
 const `{ComName}` = (props: IProps) => {
     return(
         <div className={styles.container}>
-            test page
+            `{ComName} page`
         </div>
     )
 }
