@@ -5,8 +5,11 @@
     "author": "dl.yin",
     "license": "MIT",
     "scripts": {
-        "dev": "tsc -b && vite build",
-        "start": "vite",
+        "dev": "vite build  --mode dev",
+        "fat": "vite build --mode fat",
+        "pre": "vite build --mode pre",
+        "prod": "vite build --mode prod",
+        "start": "vite --mode dev",
         "server": "vite preview"
     },
     "dependencies": {
@@ -14,7 +17,6 @@
         "antd": "^4.24.0",
         "axios": "^1.7.7",
         "cookie": "^1.0.1",
-        "cross-env": "^7.0.3",
         "lodash": "^4.17.21",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
